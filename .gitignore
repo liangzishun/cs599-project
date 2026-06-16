@@ -1,0 +1,45 @@
+# ── 敏感配置 ──
+.env
+
+# ── Python 编译文件 ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── 虚拟环境 ──
+venv/
+.venv/
+env/
+.env.local
+
+# ── IDE ──
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── 测试 / 缓存 ──
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── 数据库 / 运行时数据 ──
+*.sqlite3
+*.db
+
+# ── Node.js（前端工具链） ──
+node_modules/
+
+# ── Java / Scala ──
+*.class
+target/
+
+# ── OS ──
+.DS_Store
+Thumbs.db

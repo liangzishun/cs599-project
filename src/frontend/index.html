@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>书灵 - AI 书籍推荐系统</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">书灵</span>
+                </h1>
+                <p class="logo-subtitle">AI 书籍推荐助手</p>
+            </div>
+
+            <button class="btn-new-chat" id="btnNewChat" title="新建对话">
+                <span class="icon">+</span>
+                新建对话
+            </button>
+
+            <nav class="conversation-list" id="conversationList">
+                <!-- 对话列表动态渲染 -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="api-status" id="apiStatus">
+                    <span class="status-dot"></span>
+                    <span class="status-text">检查连接...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-area">
+            <!-- 顶部栏 -->
+            <header class="top-bar">
+                <button class="btn-toggle-sidebar" id="btnToggleSidebar" title="切换侧边栏">
+                    <span>☰</span>
+                </button>
+                <h2 class="current-chat-title" id="currentChatTitle">新对话</h2>
+                <div class="top-bar-actions">
+                    <button class="btn-icon" id="btnDeleteChat" title="删除当前对话" style="display:none;">
+                        <span>🗑️</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 聊天区域 -->
+            <div class="chat-container" id="chatContainer">
+                <!-- 欢迎界面 -->
+                <div class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-icon">📚</div>
+                    <h2>你好！我是书灵</h2>
+                    <p>你的 AI 书籍推荐助手。告诉我你想看什么类型的书，我会帮你找到最合适的！</p>
+                    <div class="quick-prompts">
+                        <h3>试试这些：</h3>
+                        <button class="quick-prompt" data-prompt="推荐一些好看的科幻小说">🚀 推荐一些好看的科幻小说</button>
+                        <button class="quick-prompt" data-prompt="最近有什么热门的历史书籍？">📜 最近有什么热门的历史书籍？</button>
+                        <button class="quick-prompt" data-prompt="我最近在读《三体》，类似的书还有哪些？">🔍 我最近在读《三体》，类似的书还有哪些？</button>
+                        <button class="quick-prompt" data-prompt="推荐一些适合初学者的编程书籍">💻 推荐一些适合初学者的编程书籍</button>
+                    </div>
+                </div>
+
+                <!-- 消息列表 -->
+                <div class="messages-container" id="messagesContainer" style="display:none;">
+                    <!-- 消息动态渲染 -->
+                </div>
+
+                <!-- 思考指示器 -->
+                <div class="thinking-indicator" id="thinkingIndicator" style="display:none;">
+                    <div class="thinking-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="thinking-text">书灵正在思考...</span>
+                </div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="input-area">
+                <div class="input-container">
+                    <input
+                        type="text"
+                        id="messageInput"
+                        class="message-input"
+                        placeholder="输入你想找的书籍类型或关键词..."
+                        autocomplete="off"
+                    />
+                    <button class="btn-send" id="btnSend" title="发送">
+                        <span>➤</span>
+                    </button>
+                </div>
+                <p class="input-hint">按 Enter 发送，Shift+Enter 换行</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- 书籍详情弹窗 -->
+    <div class="modal-overlay" id="bookDetailModal" style="display:none;">
+        <div class="modal-content">
+            <button class="modal-close" id="btnCloseModal">✕</button>
+            <div class="modal-body" id="modalBody">
+                <!-- 动态渲染 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
